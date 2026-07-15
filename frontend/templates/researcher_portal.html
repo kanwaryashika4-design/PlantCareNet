@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher Portal · Plant Care Net</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="hdr">
+    <div class="hdr-left">
+        <div class="logo-wrap">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">
+                <span class="logo-name">Plant Care Net</span>
+                <span class="logo-sub">AI Platform</span>
+            </div>
+        </div>
+        <div class="hdr-divider"></div>
+        <nav class="hdr-nav">
+            <a href="/">Home</a>
+            <a href="/farmer">Farmer Portal</a>
+            <a href="/researcher" class="active">Researcher Portal</a>
+            <a href="/disease-library">Disease Library</a>
+            <a href="/about">About</a>
+        </nav>
+    </div>
+    <div class="hdr-right">
+        <div class="model-status"><div class="pulse"></div>Engine 2 · Active</div>
+    </div>
+</header>
+
+<div class="app-shell">
+
+    <aside class="sidebar">
+        <div class="sb-label">Navigation</div>
+        <a href="/" class="sb-link"><span class="sb-ico">🏠</span> Home</a>
+        <a href="/farmer" class="sb-link"><span class="sb-ico">🌾</span> Farmer Portal</a>
+        <a href="/researcher" class="sb-link active"><span class="sb-ico">🔬</span> Researcher Portal</a>
+        <a href="/disease-library" class="sb-link"><span class="sb-ico">📚</span> Disease Library</a>
+
+        <div class="sb-sep"></div>
+        <div class="sb-label">AI Engines Active</div>
+        <div class="sb-link"><span class="sb-ico">🌲</span> Random Forest <span class="sb-badge">100 trees</span></div>
+        <div class="sb-link"><span class="sb-ico">📊</span> SHAP XAI <span class="sb-badge violet">XAI</span></div>
+
+        <div class="sb-sep"></div>
+        <div class="sb-label">Platform</div>
+        <a href="/about" class="sb-link"><span class="sb-ico">⚙️</span> About</a>
+    </aside>
+
+    <main class="main">
+
+        <div class="page-top">
+            <div class="page-title-group">
+                <div class="page-eyebrow">Engine 2 · Nutrient Deficiency Analysis</div>
+                <div class="page-title">Researcher Portal</div>
+                <p class="page-sub">Enter soil and environmental parameters to receive an AI-powered nutrient deficiency prediction with SHAP feature importance analysis and fertilizer recommendations.</p>
+            </div>
+            <div class="page-tag">Random Forest · 96.36% accuracy · 4 nutrient classes</div>
+        </div>
+
+        <div class="metric-row">
+            <div class="metric-card mc-violet">
+                <div class="metric-ico-row">
+                    <div class="metric-ico-wrap ico-violet">🌲</div>
+                    <span class="chip chip-violet">Active</span>
+                </div>
+                <div class="metric-val violet">Random Forest</div>
+                <div class="metric-label">Base Model</div>
+                <div class="metric-sub">100 estimators · max depth 8</div>
+            </div>
+            <div class="metric-card mc-teal">
+                <div class="metric-ico-row">
+                    <div class="metric-ico-wrap ico-teal">🎯</div>
+                </div>
+                <div class="metric-val teal">96.36%</div>
+                <div class="metric-label">Validation Accuracy</div>
+                <div class="metric-sub">440 test samples · stratified split</div>
+            </div>
+            <div class="metric-card mc-amber">
+                <div class="metric-ico-row">
+                    <div class="metric-ico-wrap ico-amber">🧪</div>
+                </div>
+                <div class="metric-val amber">6</div>
+                <div class="metric-label">Input Features</div>
+                <div class="metric-sub">N · P · K · Temp · Humidity · pH</div>
+            </div>
+            <div class="metric-card mc-violet">
+                <div class="metric-ico-row">
+                    <div class="metric-ico-wrap ico-violet">📊</div>
+                    <span class="chip chip-violet">XAI</span>
+                </div>
+                <div class="metric-val violet">SHAP</div>
+                <div class="metric-label">Explainability</div>
+                <div class="metric-sub">Feature importance bar chart</div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+
+            <div class="panel">
+                <div class="panel-title-row">
+                    <div class="panel-title">
+                        <div class="panel-ico-badge pib-violet">🌱</div>
+                        Environmental &amp; Soil Parameters
+                    </div>
+                    <div class="panel-meta">6 required fields</div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label class="field-label">Nitrogen (N) <span class="field-unit">kg/ha</span></label>
+                        <input type="number" id="inputN" class="field-input" placeholder="e.g. 60" min="0" max="140" step="0.1">
+                        <span class="field-hint">Optimal: 80 kg/ha · Range: 0–140</span>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Phosphorus (P) <span class="field-unit">kg/ha</span></label>
+                        <input type="number" id="inputP" class="field-input" placeholder="e.g. 40" min="0" max="145" step="0.1">
+                        <span class="field-hint">Optimal: 50 kg/ha · Range: 0–145</span>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Potassium (K) <span class="field-unit">kg/ha</span></label>
+                        <input type="number" id="inputK" class="field-input" placeholder="e.g. 45" min="0" max="205" step="0.1">
+                        <span class="field-hint">Optimal: 50 kg/ha · Range: 0–205</span>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Temperature <span class="field-unit">°C</span></label>
+                        <input type="number" id="inputTemperature" class="field-input" placeholder="e.g. 25" min="0" max="50" step="0.1">
+                        <span class="field-hint">Range: 0–50°C</span>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Humidity <span class="field-unit">%</span></label>
+                        <input type="number" id="inputHumidity" class="field-input" placeholder="e.g. 70" min="0" max="100" step="0.1">
+                        <span class="field-hint">Range: 0–100%</span>
+                    </div>
+                    <div class="form-field">
+                        <label class="field-label">Soil pH <span class="field-unit">pH</span></label>
+                        <input type="number" id="inputPh" class="field-input" placeholder="e.g. 6.5" min="0" max="14" step="0.01">
+                        <span class="field-hint">Ideal: 6.0–7.0 · Range: 0–14</span>
+                    </div>
+                </div>
+
+                <button class="btn-analyze btn-researcher" onclick="analyzeNutrient()">
+                    🔬 Analyze Nutrient Status
+                </button>
+
+                <div class="hint-box violet" style="margin-top:14px">
+                    <div class="hint-title">📊 SHAP — Explainable AI</div>
+                    <p class="hint-body">After prediction, a SHAP feature importance chart is generated showing which of your 6 input parameters most influenced the nutrient deficiency classification — essential for agricultural research and decision-making.</p>
+                </div>
+            </div>
+
+            <div id="nutrientResultsSection" style="display:none">
+
+                <div class="loading-panel" id="nutrientLoadingCard" style="display:none">
+                    <div class="spinner spinner-violet"></div>
+                    <div class="loading-head">Analyzing nutrient parameters...</div>
+                    <div class="loading-sub">Running Random Forest classifier · SHAP TreeExplainer</div>
+                </div>
+
+                <div class="panel" id="nutrientResultsCard" style="display:none">
+                    <div class="panel-title-row">
+                        <div class="panel-title">
+                            <div class="panel-ico-badge pib-violet">📊</div>
+                            Nutrient Analysis Report
+                        </div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-card">
+                            <span class="result-lbl">Nutrient Status</span>
+                            <span class="result-val violet" id="nutrientResult">—</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-lbl">Confidence Score</span>
+                            <span class="result-val" id="nutrientConfidenceResult">—</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:14px">
+                        <div class="xai-header">All Class Probabilities</div>
+                        <div id="nutrientAllProbabilities"></div>
+                    </div>
+
+                    <div class="param-summary">
+                        <div class="ps-title">Input Parameters Summary</div>
+                        <div class="ps-grid">
+                            <div class="ps-item"><span class="ps-label">Nitrogen (N)</span><span class="ps-val" id="sumN">—</span></div>
+                            <div class="ps-item"><span class="ps-label">Phosphorus (P)</span><span class="ps-val" id="sumP">—</span></div>
+                            <div class="ps-item"><span class="ps-label">Potassium (K)</span><span class="ps-val" id="sumK">—</span></div>
+                            <div class="ps-item"><span class="ps-label">Temperature</span><span class="ps-val" id="sumTemp">—</span></div>
+                            <div class="ps-item"><span class="ps-label">Humidity</span><span class="ps-val" id="sumHumidity">—</span></div>
+                            <div class="ps-item"><span class="ps-label">Soil pH</span><span class="ps-val" id="sumPh">—</span></div>
+                        </div>
+                    </div>
+
+                    <div class="xai-section" id="shapSection" style="display:none">
+                        <div class="xai-header">
+                            📊 SHAP Feature Importance
+                            <span class="xai-badge">Explainable AI</span>
+                        </div>
+                        <div class="xai-frame">
+                            <img id="shapImage" alt="SHAP feature importance chart">
+                            <div class="xai-caption">
+                                Red bars = factors increasing deficiency risk &nbsp;·&nbsp;
+                                Blue bars = factors decreasing deficiency risk &nbsp;·&nbsp;
+                                Bar length = magnitude of influence
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rec-box violet-tone" id="nutrientRecommendationCard">
+                        <div class="rec-hdr">
+                            <span class="rec-icon">🌱</span>
+                            <div class="rec-title">Fertilizer Recommendation</div>
+                            <span class="p-badge" id="nutrientPriorityBadge">—</span>
+                        </div>
+                        <p class="rec-body" id="nutrientTreatmentText">—</p>
+                        <div class="rec-time">⏱ <span id="nutrientTimeframeText">—</span></div>
+                    </div>
+                </div>
+
+                <div class="error-panel" id="nutrientErrorCard" style="display:none">
+                    <span class="err-ico">⚠️</span>
+                    <p id="nutrientErrorText">Something went wrong.</p>
+                    <button onclick="resetNutrient()" class="btn-retry">Try Again</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

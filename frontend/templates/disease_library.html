@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Library · Plant Care Net</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hdr">
+        <div class="hdr-left">
+            <div class="logo-wrap">
+                <span class="logo-icon">🌿</span>
+                <div class="logo-text">
+                    <span class="logo-name">Plant Care Net</span>
+                    <span class="logo-sub">AI Platform</span>
+                </div>
+            </div>
+            <div class="hdr-divider"></div>
+            <nav class="hdr-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/farmer" class="nav-link">Farmer Portal</a>
+                <a href="/researcher" class="nav-link">Researcher Portal</a>
+                <a href="/disease-library" class="nav-link active">Disease Library</a>
+                <a href="/about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-shell">
+        
+        <aside class="sidebar">
+            <span class="sb-label">Navigation</span>
+            <a href="/" class="sb-link">🏠 Home</a>
+            <a href="/farmer" class="sb-link">👨‍🌾 Farmer Portal</a>
+            <a href="/researcher" class="sb-link">🔬 Researcher Portal</a>
+            <a href="/disease-library" class="sb-link active">🌿 Disease Library</a>
+            <a href="/about" class="sb-link">ℹ️ About</a>
+        </aside>
+
+        <main class="main">
+            
+            <div class="page-top">
+                <div class="page-title-group">
+                    <span class="page-eyebrow">Reference Database</span>
+                    <h1 class="page-title">Tomato Disease Library</h1>
+                    <p class="page-sub">Detailed reference for every disease class detected by the Plant Care Net AI</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title-row">
+                    <div class="panel-title">
+                        <span class="panel-ico-badge pib-teal">🌿</span>
+                        <span>Pathogen Directory</span>
+                    </div>
+                    <span class="panel-meta">4 classes configured</span>
+                </div>
+
+                <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
+
+                    <div class="metric-card mc-teal" style="display: flex; flex-direction: column; gap: 12px; height: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div>
+                                <h3 class="metric-val teal" style="font-size: 18px;">Bacterial Spot</h3>
+                                <span class="metric-sub" style="font-style: italic;">Xanthomonas campestris pv. vesicatoria</span>
+                            </div>
+                            <span class="chip chip-red">High Risk</span>
+                        </div>
+                        
+                        <div class="result-card">
+                            <span class="result-lbl">Visual Symptoms</span>
+                            <p style="font-size: 12px; color: var(--slate-600);">Small, water-soaked spots (1–3 mm) on leaves that turn dark brown to black with yellow halos. Fruit develops raised, scabby spots.</p>
+                        </div>
+
+                        <div class="result-card">
+                            <span class="result-lbl">Optimal Development Conditions</span>
+                            <p style="font-size: 11px; color: var(--slate-500); font-weight: 500;">High humidity, Warm temps (24–30°C), Wind-driven rain, Infected seeds</p>
+                        </div>
+
+                        <div class="rec-box">
+                            <div class="rec-hdr">
+                                <span class="rec-icon">🧪</span>
+                                <span class="rec-title">Treatment Protocol</span>
+                            </div>
+                            <p class="rec-body">Apply copper-based bactericide (Copper Oxychloride 50% WP). Remove infected debris. Avoid overhead irrigation.</p>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; font-size: 11px; padding-top: 8px; border-top: 1px solid var(--slate-100);">
+                            <span style="color: var(--slate-400);">Samples: <strong>2,826 images</strong></span>
+                            <span class="p-badge p-high">Action: 24h</span>
+                        </div>
+                        <a href="/farmer" class="btn-download" style="background: var(--teal-700); color: white; margin-top: auto; border: none;">Diagnose this disease →</a>
+                    </div>
+
+                    <div class="metric-card mc-amber" style="display: flex; flex-direction: column; gap: 12px; height: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div>
+                                <h3 class="metric-val amber" style="font-size: 18px;">Early Blight</h3>
+                                <span class="metric-sub" style="font-style: italic;">Alternaria solani</span>
+                            </div>
+                            <span class="chip chip-amber">Moderate Risk</span>
+                        </div>
+                        
+                        <div class="result-card">
+                            <span class="result-lbl">Visual Symptoms</span>
+                            <p style="font-size: 12px; color: var(--slate-600);">Circular to irregular dark brown lesions with concentric rings forming a "target board" pattern, starting on older lower leaves.</p>
+                        </div>
+
+                        <div class="result-card">
+                            <span class="result-lbl">Optimal Development Conditions</span>
+                            <p style="font-size: 11px; color: var(--slate-500); font-weight: 500;">Warm temps (24–29°C), High humidity, Nitrogen deficiency, Stressed plants</p>
+                        </div>
+
+                        <div class="rec-box">
+                            <div class="rec-hdr">
+                                <span class="rec-icon">🧪</span>
+                                <span class="rec-title">Treatment Protocol</span>
+                            </div>
+                            <p class="rec-body">Apply chlorothalonil or mancozeb fungicide. Improve plant nutrition — nitrogen-deficient plants are highly susceptible.</p>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; font-size: 11px; padding-top: 8px; border-top: 1px solid var(--slate-100);">
+                            <span style="color: var(--slate-400);">Samples: <strong>2,455 images</strong></span>
+                            <span class="p-badge p-moderate">Action: 48h</span>
+                        </div>
+                        <a href="/farmer" class="btn-download" style="background: var(--teal-700); color: white; margin-top: auto; border: none;">Diagnose this disease →</a>
+                    </div>
+
+                    <div class="metric-card mc-violet" style="display: flex; flex-direction: column; gap: 12px; height: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div>
+                                <h3 class="metric-val violet" style="font-size: 18px;">Late Blight</h3>
+                                <span class="metric-sub" style="font-style: italic;">Phytophthora infestans</span>
+                            </div>
+                            <span class="chip chip-red">Critical Risk</span>
+                        </div>
+                        
+                        <div class="result-card">
+                            <span class="result-lbl">Visual Symptoms</span>
+                            <p style="font-size: 12px; color: var(--slate-600);">Large, irregular, water-soaked lesions that rapidly turn dark brown to black. White fuzzy sporulation visible on leaf undersides.</p>
+                        </div>
+
+                        <div class="result-card">
+                            <span class="result-lbl">Optimal Development Conditions</span>
+                            <p style="font-size: 11px; color: var(--slate-500); font-weight: 500;">Cool temps (10–25°C), Very high humidity, Prolonged leaf wetness</p>
+                        </div>
+
+                        <div class="rec-box violet-tone">
+                            <div class="rec-hdr">
+                                <span class="rec-icon">🧪</span>
+                                <span class="rec-title">Treatment Protocol</span>
+                            </div>
+                            <p class="rec-body">Apply copper-based fungicide immediately. Remove and destroy all infected plant material — do not compost.</p>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; font-size: 11px; padding-top: 8px; border-top: 1px solid var(--slate-100);">
+                            <span style="color: var(--slate-400);">Samples: <strong>3,113 images</strong></span>
+                            <span class="p-badge p-high">Action: 24h</span>
+                        </div>
+                        <a href="/farmer" class="btn-download" style="background: var(--teal-700); color: white; margin-top: auto; border: none;">Diagnose this disease →</a>
+                    </div>
+
+                    <div class="metric-card mc-sky" style="display: flex; flex-direction: column; gap: 12px; height: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div>
+                                <h3 class="metric-val sky" style="font-size: 18px;">Healthy Plant</h3>
+                                <span class="metric-sub" style="font-style: italic;">No pathogen detected</span>
+                            </div>
+                            <span class="chip chip-teal">Healthy</span>
+                        </div>
+                        
+                        <div class="result-card">
+                            <span class="result-lbl">Visual Indicators</span>
+                            <p style="font-size: 12px; color: var(--slate-600);">Uniform deep green coloration across the leaf blade. No lesions, spots, or necrotic areas. Clear leaf margins without browning.</p>
+                        </div>
+
+                        <div class="result-card">
+                            <span class="result-lbl">Optimal General Conditions</span>
+                            <p style="font-size: 11px; color: var(--slate-500); font-weight: 500;">Temp 21–27°C, Soil pH 6.0–7.0, Adequate N, P, K levels</p>
+                        </div>
+
+                        <div class="rec-box">
+                            <div class="rec-hdr">
+                                <span class="rec-icon">✨</span>
+                                <span class="rec-title">Maintenance Protocol</span>
+                            </div>
+                            <p class="rec-body">Maintain balanced fertilization schedule. Monitor weekly for early disease signs. Water at root zone only.</p>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; font-size: 11px; padding-top: 8px; border-top: 1px solid var(--slate-100);">
+                            <span style="color: var(--slate-400);">Samples: <strong>3,051 images</strong></span>
+                            <span class="p-badge p-none">Action: None</span>
+                        </div>
+                        <a href="/farmer" class="btn-download" style="background: var(--teal-700); color: white; margin-top: auto; border: none;">Confirm plant health →</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title-row">
+                    <div class="panel-title">
+                        <span class="panel-ico-badge pib-violet">📊</span>
+                        <span>Nutrient Deficiency Matrix</span>
+                    </div>
+                    <span class="panel-meta">Core Soil Metrics (Random Forest Model)</span>
+                </div>
+
+                <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+                    
+                    <div class="result-card" style="border-left: 4px solid var(--amber-600);">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span class="chip chip-amber" style="padding: 2px 8px;">N</span>
+                            <strong style="color: var(--navy);">Nitrogen</strong>
+                        </div>
+                        <p style="font-size: 12px; color: var(--slate-600); line-height: 1.6; margin-bottom: 8px;">Yellowing starts from older lower leaves and progresses upward. Pale foliage tissue.</p>
+                        <div class="param-summary" style="margin-top: 4px; padding: 8px;"><span class="ps-label">Rec: Apply Urea (46-0-0) at 20-25 kg/acre</span></div>
+                    </div>
+
+                    <div class="result-card" style="border-left: 4px solid var(--violet-600);">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span class="chip chip-violet" style="padding: 2px 8px;">P</span>
+                            <strong style="color: var(--navy);">Phosphorus</strong>
+                        </div>
+                        <p style="font-size: 12px; color: var(--slate-600); line-height: 1.6; margin-bottom: 8px;">Purple or reddish leaf undersides. Stunted root development.</p>
+                        <div class="param-summary" style="margin-top: 4px; padding: 8px;"><span class="ps-label">Rec: Apply DAP or SSP near root zone</span></div>
+                    </div>
+
+                    <div class="result-card" style="border-left: 4px solid var(--sky-600);">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span class="chip chip-sky" style="padding: 2px 8px;">K</span>
+                            <strong style="color: var(--navy);">Potassium</strong>
+                        </div>
+                        <p style="font-size: 12px; color: var(--slate-600); line-height: 1.6; margin-bottom: 8px;">Marginal leaf scorch and browning of edges, especially on older leaves.</p>
+                        <div class="param-summary" style="margin-top: 4px; padding: 8px;"><span class="ps-label">Rec: Apply Potassium Sulfate (SOP)</span></div>
+                    </div>
+
+                    <div class="result-card" style="border-left: 4px solid var(--teal-600);">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <span class="chip chip-teal" style="padding: 2px 8px;">✓</span>
+                            <strong style="color: var(--navy);">Optimal Levels</strong>
+                        </div>
+                        <p style="font-size: 12px; color: var(--slate-600); line-height: 1.6; margin-bottom: 8px;">All major macro-nutrients fall strictly within target threshold limits.</p>
+                        <div class="param-summary" style="margin-top: 4px; padding: 8px;"><span class="ps-label">Rec: Continue routine soil monitoring</span></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">🌿 Plant Care Net</div>
+                <p class="footer-desc">Multimodal Plant Disease Diagnosis, Infection Severity Quantification &amp; Deficiency Analysis Platform</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <div class="footer-col-head">Core Engine Components</div>
+                    <span style="font-size: 12px; color: rgba(255,255,255,0.4);">MobileNetV2 CNN · Random Forest Classifier · Grad-CAM · SHAP</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Built with TensorFlow, OpenCV, Flask &amp; Scikit-learn</span>
+            <span>© 2026 Plant Care Net</span>
+        </div>
+    </footer>
+
+</body>
+</html>

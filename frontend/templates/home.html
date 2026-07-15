@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Care Net — Multimodal Plant Health AI Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+    <div class="hdr-left">
+        <div class="logo-wrap">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">
+                <span class="logo-name">Plant Care Net</span>
+                <span class="logo-sub">AI Platform</span>
+            </div>
+        </div>
+        <div class="hdr-divider"></div>
+        <nav class="hdr-nav">
+            <a href="/" class="active">Home</a>
+            <a href="/farmer">Farmer Portal</a>
+            <a href="/researcher">Researcher Portal</a>
+            <a href="/disease-library">Disease Library</a>
+            <a href="/about">About</a>
+        </nav>
+    </div>
+    <div class="hdr-right">
+        <div class="model-status">
+            <div class="pulse"></div>
+            Models active
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-eyebrow">
+            <span class="eye-dot"></span>
+            Multimodal AI &nbsp;·&nbsp; Precision Agriculture &nbsp;·&nbsp; Explainable AI
+        </div>
+        <h1 class="hero-title">Plant Care Net</h1>
+        <p class="hero-sub-title">
+            Multimodal Plant Disease Diagnosis, Infection Severity
+            Quantification &amp; Deficiency Analysis Platform
+        </p>
+        <p class="hero-desc">
+            Empowering farmers and agricultural researchers with AI-powered
+            tomato crop health assessment — from field imagery to soil science,
+            with full Grad-CAM and SHAP explainability.
+        </p>
+        <div class="hero-buttons">
+            <a href="/farmer"><button class="btn-h-primary">Start Diagnosis →</button></a>
+            <a href="/disease-library"><button class="btn-h-ghost">View Disease Library</button></a>
+        </div>
+    </div>
+    <div class="hero-stats-bar">
+        <div class="h-stat">
+            <div class="hs-val">93.88%</div>
+            <div class="hs-label">Disease detection</div>
+            <div class="hs-sub">MobileNetV2 CNN</div>
+        </div>
+        <div class="h-stat">
+            <div class="hs-val">96.36%</div>
+            <div class="hs-label">Nutrient analysis</div>
+            <div class="hs-sub">Random Forest</div>
+        </div>
+        <div class="h-stat">
+            <div class="hs-val">11,445</div>
+            <div class="hs-label">Training images</div>
+            <div class="hs-sub">Tomato pathology</div>
+        </div>
+        <div class="h-stat">
+            <div class="hs-val">3</div>
+            <div class="hs-label">AI engines</div>
+            <div class="hs-sub">CNN · RF · OpenCV</div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTAL CARDS -->
+<section class="home-section" style="background:var(--white)">
+    <div class="hs-eyebrow">Platform Modules</div>
+    <h2 class="hs-title">Choose Your Analysis Mode</h2>
+    <p class="hs-sub">Two specialized AI engines, one unified diagnostic report with explainable AI</p>
+
+    <div class="portal-cards">
+        <div class="portal-card">
+            <div class="pc-top">
+                <div class="pc-ico">🌾</div>
+                <div class="pc-badge pcb-teal">Field Use</div>
+            </div>
+            <div class="pc-title">Farmer Portal</div>
+            <p class="pc-desc">
+                Upload a tomato leaf photo directly from your phone or camera.
+                Get an instant AI-powered diagnosis with disease type, severity percentage,
+                Grad-CAM visual explanation heatmap, and a priority-ranked treatment plan —
+                all in under 5 seconds.
+            </p>
+            <ul class="pc-feats">
+                <li><span class="feat-ok">✓</span> Disease classification — 4 classes</li>
+                <li><span class="feat-ok">✓</span> HSV-based infected area scoring</li>
+                <li><span class="feat-ok">✓</span> Grad-CAM XAI heatmap overlay</li>
+                <li><span class="feat-ok">✓</span> All-class probability breakdown</li>
+                <li><span class="feat-ok">✓</span> Invalid image detection and rejection</li>
+                <li><span class="feat-ok">✓</span> Downloadable diagnosis report</li>
+            </ul>
+            <a href="/farmer"><button class="pc-cta cta-teal">Open Farmer Portal <span>→</span></button></a>
+        </div>
+
+        <div class="portal-card">
+            <div class="pc-top">
+                <div class="pc-ico">🔬</div>
+                <div class="pc-badge pcb-violet">Lab &amp; Research</div>
+            </div>
+            <div class="pc-title">Researcher Portal</div>
+            <p class="pc-desc">
+                Enter soil and environmental parameters — Nitrogen, Phosphorus, Potassium,
+                pH, Temperature, Humidity — to receive an AI-powered nutrient deficiency
+                classification with SHAP feature importance analysis and targeted
+                fertilizer recommendations.
+            </p>
+            <ul class="pc-feats">
+                <li><span class="feat-ok">✓</span> N, P, K deficiency detection</li>
+                <li><span class="feat-ok">✓</span> Environmental parameter analysis</li>
+                <li><span class="feat-ok">✓</span> Auto feature engineering pipeline</li>
+                <li><span class="feat-ok">✓</span> SHAP XAI explanation bar chart</li>
+                <li><span class="feat-ok">✓</span> All-class confidence probability display</li>
+                <li><span class="feat-ok">✓</span> Fertilizer dosage recommendations</li>
+            </ul>
+            <a href="/researcher"><button class="pc-cta cta-violet">Open Researcher Portal <span>→</span></button></a>
+        </div>
+
+        <div class="portal-card">
+            <div class="pc-top">
+                <div class="pc-ico">📚</div>
+                <div class="pc-badge pcb-amber">Reference</div>
+            </div>
+            <div class="pc-title">Disease Library</div>
+            <p class="pc-desc">
+                Explore detailed reference cards for every tomato disease class the AI
+                can detect. Each card covers visual symptoms, causal organisms,
+                environmental conditions that promote infection, and full treatment protocols
+                with priority recommendations.
+            </p>
+            <ul class="pc-feats">
+                <li><span class="feat-ok">✓</span> Bacterial Spot — Xanthomonas spp.</li>
+                <li><span class="feat-ok">✓</span> Early Blight — Alternaria solani</li>
+                <li><span class="feat-ok">✓</span> Late Blight — Phytophthora infestans</li>
+                <li><span class="feat-ok">✓</span> Healthy plant baseline indicators</li>
+                <li><span class="feat-ok">✓</span> N, P, K deficiency reference guide</li>
+                <li><span class="feat-ok">✓</span> Treatment protocols per disease</li>
+            </ul>
+            <a href="/disease-library"><button class="pc-cta cta-amber">Browse Disease Library <span>→</span></button></a>
+        </div>
+
+        <div class="portal-card">
+            <div class="pc-top">
+                <div class="pc-ico">⚙️</div>
+                <div class="pc-badge pcb-navy">Technical</div>
+            </div>
+            <div class="pc-title">About the Platform</div>
+            <p class="pc-desc">
+                Complete technical documentation for the platform — model architecture,
+                training dataset composition, accuracy benchmarks, preprocessing methodology,
+                the HSV severity scoring pipeline, and how Grad-CAM and SHAP
+                explainability were implemented.
+            </p>
+            <ul class="pc-feats">
+                <li><span class="feat-ok">✓</span> MobileNetV2 architecture and specs</li>
+                <li><span class="feat-ok">✓</span> Random Forest model configuration</li>
+                <li><span class="feat-ok">✓</span> Grad-CAM XAI methodology</li>
+                <li><span class="feat-ok">✓</span> SHAP TreeExplainer pipeline</li>
+                <li><span class="feat-ok">✓</span> HSV severity scoring algorithm</li>
+                <li><span class="feat-ok">✓</span> Full training accuracy benchmarks</li>
+            </ul>
+            <a href="/about"><button class="pc-cta cta-navy">View Platform Details <span>→</span></button></a>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="home-section" style="background:var(--slate-50)">
+    <div class="hs-eyebrow">Workflow</div>
+    <h2 class="hs-title">How Plant Care Net Works</h2>
+    <p class="hs-sub">A three-stage AI pipeline from raw input to actionable, explainable output</p>
+    <div class="hiw-grid">
+        <div class="hiw-card">
+            <div class="hiw-num">01</div>
+            <span class="hiw-ico">📥</span>
+            <h4>Input Collection</h4>
+            <p>Farmer uploads a tomato leaf photograph. Researcher enters 6 soil and environmental parameters. Both paths feed their respective AI engines automatically.</p>
+        </div>
+        <div class="hiw-arrow">→</div>
+        <div class="hiw-card">
+            <div class="hiw-num">02</div>
+            <span class="hiw-ico">🧠</span>
+            <h4>AI Processing</h4>
+            <p>MobileNetV2 CNN classifies disease type with 93.88% accuracy. OpenCV HSV pixel masking quantifies infected leaf area percentage. Random Forest predicts nutrient deficiency class.</p>
+        </div>
+        <div class="hiw-arrow">→</div>
+        <div class="hiw-card">
+            <div class="hiw-num">03</div>
+            <span class="hiw-ico">📊</span>
+            <h4>Explainable Report</h4>
+            <p>Complete diagnostic output — disease name, confidence score, severity level, Grad-CAM heatmap showing AI focus regions, SHAP feature importance chart, and a priority treatment plan.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES DARK -->
+<section class="features-dark">
+    <div class="hs-eyebrow" style="color:var(--teal-400)">Capabilities</div>
+    <h2 class="fd-title">What Makes Plant Care Net Different</h2>
+    <p class="fd-sub">Unlike systems that only identify disease type, this platform performs multilevel crop health analysis</p>
+    <div class="feat-grid">
+        <div class="feat-card">
+            <div class="fc-ico-wrap fc-teal">🔍</div>
+            <div class="fc-title">Multilevel Crop Analysis</div>
+            <p class="fc-body">Disease classification, infection severity quantification, and nutrient deficiency analysis combined — not just disease type identification alone.</p>
+        </div>
+        <div class="feat-card">
+            <div class="fc-ico-wrap fc-amber">📐</div>
+            <div class="fc-title">Infection Severity Quantification</div>
+            <p class="fc-body">HSV-based pixel masking calculates the exact percentage of leaf area showing disease symptoms — mild (0–20%), moderate (21–50%), or severe (51–100%).</p>
+        </div>
+        <div class="feat-card">
+            <div class="fc-ico-wrap fc-violet">🧠</div>
+            <div class="fc-title">Grad-CAM Explainability</div>
+            <p class="fc-body">Visual heatmap overlay shows exactly which leaf regions the AI focused on when making the disease diagnosis — transparent and trustworthy predictions.</p>
+        </div>
+        <div class="feat-card">
+            <div class="fc-ico-wrap fc-sky">📊</div>
+            <div class="fc-title">SHAP Feature Importance</div>
+            <p class="fc-body">Bar chart shows which of the 6 soil and environmental parameters most influenced the nutrient deficiency classification — essential for research analysis.</p>
+        </div>
+        <div class="feat-card">
+            <div class="fc-ico-wrap fc-red">🛡️</div>
+            <div class="fc-title">Robust Image Validation</div>
+            <p class="fc-body">Multi-layer validation using confidence threshold, green pixel ratio, color variance, edge density, and dominant color analysis rejects charts, graphs, and non-leaf images.</p>
+        </div>
+        <div class="feat-card">
+            <div class="fc-ico-wrap fc-slate">⚡</div>
+            <div class="fc-title">Real-Time Inference</div>
+            <p class="fc-body">Both AI models serve predictions in real time — disease diagnosis with Grad-CAM heatmap generation completes in under 5 seconds on standard hardware.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DISEASE STRIP -->
+<section class="home-section" style="background:var(--navy);text-align:center">
+    <div class="hs-eyebrow" style="color:var(--teal-400)">Detection Classes</div>
+    <h2 class="hs-title" style="color:var(--white)">Diseases the AI Can Detect</h2>
+    <p class="hs-sub" style="color:rgba(255,255,255,0.4)">Trained on 11,445 tomato leaf images across 4 disease classes</p>
+    <div class="disease-strip" style="margin-bottom:28px">
+        <div class="d-card d-red">
+            <span class="d-dot" style="background:#f87171"></span>
+            <div class="d-name">Bacterial Spot</div>
+            <div class="d-sci">Xanthomonas spp.</div>
+        </div>
+        <div class="d-card d-orange">
+            <span class="d-dot" style="background:#fbbf24"></span>
+            <div class="d-name">Early Blight</div>
+            <div class="d-sci">Alternaria solani</div>
+        </div>
+        <div class="d-card d-violet">
+            <span class="d-dot" style="background:#a78bfa"></span>
+            <div class="d-name">Late Blight</div>
+            <div class="d-sci">Phytophthora infestans</div>
+        </div>
+        <div class="d-card d-teal">
+            <span class="d-dot" style="background:#34d399"></span>
+            <div class="d-name">Healthy</div>
+            <div class="d-sci">No pathogen detected</div>
+        </div>
+    </div>
+    <a href="/disease-library"><button class="btn-h-ghost">View Full Disease Library →</button></a>
+</section>
+
+<!-- TECH STACK -->
+<section class="home-section" style="background:var(--slate-50);text-align:center">
+    <div class="hs-eyebrow">Technology</div>
+    <h2 class="hs-title">Built With</h2>
+    <p class="hs-sub" style="margin-bottom:28px">Industry-standard tools for deep learning, computer vision, and explainable AI</p>
+    <div class="tech-grid">
+        <div class="tech-card"><span class="tc-ico">🧠</span><div class="tc-name">TensorFlow</div><div class="tc-role">Deep learning</div></div>
+        <div class="tech-card"><span class="tc-ico">📱</span><div class="tc-name">MobileNetV2</div><div class="tc-role">Disease CNN</div></div>
+        <div class="tech-card"><span class="tc-ico">🌲</span><div class="tc-name">Random Forest</div><div class="tc-role">Nutrient model</div></div>
+        <div class="tech-card"><span class="tc-ico">👁️</span><div class="tc-name">OpenCV</div><div class="tc-role">HSV analysis</div></div>
+        <div class="tech-card"><span class="tc-ico">🐍</span><div class="tc-name">Flask</div><div class="tc-role">Web backend</div></div>
+        <div class="tech-card"><span class="tc-ico">📊</span><div class="tc-name">SHAP</div><div class="tc-role">XAI engine</div></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-top">
+        <div>
+            <div class="footer-logo">🌿 Plant Care Net</div>
+            <p class="footer-desc">Multimodal Plant Disease Diagnosis, Infection Severity Quantification &amp; Deficiency Analysis Platform — built with TensorFlow, OpenCV, Flask, and SHAP.</p>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <div class="footer-col-head">Portals</div>
+                <a href="/farmer">Farmer Portal</a>
+                <a href="/researcher">Researcher Portal</a>
+                <a href="/disease-library">Disease Library</a>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-head">Platform</div>
+                <a href="/about">About</a>
+                <a href="/about#models">AI Models</a>
+                <a href="/about#methodology">Methodology</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>Built with TensorFlow · OpenCV · Flask · SHAP · Scikit-learn</span>
+        <span>© 2025 Plant Care Net</span>
+    </div>
+</footer>
+
+</body>
+</html>

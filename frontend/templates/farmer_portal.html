@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Portal · Plant Care Net</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="hdr">
+    <div class="hdr-left">
+        <div class="logo-wrap">
+            <div class="logo-icon">🌿</div>
+            <div class="logo-text">
+                <span class="logo-name">Plant Care Net</span>
+                <span class="logo-sub">AI Platform</span>
+            </div>
+        </div>
+        <div class="hdr-divider"></div>
+        <nav class="hdr-nav">
+            <a href="/">Home</a>
+            <a href="/farmer" class="active">Farmer Portal</a>
+            <a href="/researcher">Researcher Portal</a>
+            <a href="/disease-library">Disease Library</a>
+            <a href="/about">About</a>
+        </nav>
+    </div>
+    <div class="hdr-right">
+        <div class="model-status"><div class="pulse"></div>Engine 1 · Active</div>
+    </div>
+</header>
+
+<div class="app-shell">
+
+    <aside class="sidebar">
+        <div class="sb-label">Navigation</div>
+        <a href="/" class="sb-link"><span class="sb-ico">🏠</span> Home</a>
+        <a href="/farmer" class="sb-link active"><span class="sb-ico">🌾</span> Farmer Portal</a>
+        <a href="/researcher" class="sb-link"><span class="sb-ico">🔬</span> Researcher Portal</a>
+        <a href="/disease-library" class="sb-link"><span class="sb-ico">📚</span> Disease Library</a>
+
+        <div class="sb-sep"></div>
+        <div class="sb-label">AI Engines Active</div>
+        <div class="sb-link"><span class="sb-ico">🧠</span> MobileNetV2 <span class="sb-badge">CNN</span></div>
+        <div class="sb-link"><span class="sb-ico">👁️</span> Grad-CAM XAI <span class="sb-badge violet">XAI</span></div>
+        <div class="sb-link"><span class="sb-ico">📐</span> HSV Severity <span class="sb-badge">CV</span></div>
+
+        <div class="sb-sep"></div>
+        <div class="sb-label">Platform</div>
+        <a href="/about" class="sb-link"><span class="sb-ico">⚙️</span> About</a>
+    </aside>
+
+    <main class="main">
+
+        <div class="page-top">
+            <div class="page-title-group">
+                <div class="page-eyebrow">Engine 1 · Disease Classification</div>
+                <div class="page-title">Farmer Portal</div>
+                <p class="page-sub">Upload a tomato leaf image for instant AI disease diagnosis with Grad-CAM visual explainability, severity quantification, and treatment recommendations.</p>
+            </div>
+            <div class="page-tag">MobileNetV2 · 93.88% accuracy · 4 classes</div>
+        </div>
+
+        <div class="metric-row">
+            <div class="metric-card mc-teal">
+                <div class="metric-ico-row">
+                    <div class="metric-ico-wrap ico-teal">🧠</div>
+                    <span class="chip chip-teal">Active</span>
+                </div>
+                <div class="metric-val teal">MobileNetV2</div>
+                <div class="metric-label">Base Model</div>
+                <div class="metric-sub">Transfer learning · ImageNet weights</div>
+            </div>
+            <div class="metric-card mc-sky">
+                <div class="metric-ico-row">
+                    <div class="metric-ico-wrap ico-sky">🎯</div>
+                </div>
+                <div class="metric-val sky">93.88%</div>
+                <div class="metric-label">Validation Accuracy</div>
+                <div class="metric-sub">2,972 validation images</div>
+            </div>
+            <div class="metric-card mc-amber">
+                <div class="metric-ico-row">
+                    <div class="metric-ico-wrap ico-amber">🏷️</div>
+                </div>
+                <div class="metric-val amber">4</div>
+                <div class="metric-label">Disease Classes</div>
+                <div class="metric-sub">Bacterial · Early · Late · Healthy</div>
+            </div>
+            <div class="metric-card mc-violet">
+                <div class="metric-ico-row">
+                    <div class="metric-ico-wrap ico-violet">👁️</div>
+                    <span class="chip chip-violet">XAI</span>
+                </div>
+                <div class="metric-val violet">Grad-CAM</div>
+                <div class="metric-label">Explainability</div>
+                <div class="metric-sub">Visual heatmap overlay</div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+
+            <!-- Upload panel -->
+            <div class="panel">
+                <div class="panel-title-row">
+                    <div class="panel-title">
+                        <div class="panel-ico-badge pib-teal">📷</div>
+                        Upload Leaf Image
+                    </div>
+                    <div class="panel-meta">JPG · PNG · WEBP · Max 10MB</div>
+                </div>
+
+                <div class="upload-zone" id="uploadArea">
+                    <input type="file" id="imageInput" accept=".jpg,.jpeg,.png,.webp" hidden>
+                    <div id="uploadPlaceholder">
+                        <div class="upload-cloud">📷</div>
+                        <div class="upload-heading">Click or drag your leaf image here</div>
+                        <p class="upload-subtext">
+                            For best results, ensure the tomato leaf fills most of the frame.<br>
+                            Other images, graphics, and charts will be automatically rejected.
+                        </p>
+                        <button class="btn-upload-primary" onclick="document.getElementById('imageInput').click()">
+                            Choose Image
+                        </button>
+                    </div>
+                    <div class="img-preview-wrap" id="imagePreviewWrapper" style="display:none">
+                        <img id="imagePreview" class="img-preview" alt="Leaf preview">
+                        <button class="btn-change-img" onclick="resetUpload()">Change</button>
+                    </div>
+                </div>
+
+                <button class="btn-analyze btn-farmer" id="analyzeBtn" onclick="analyzeDiseaseImage()" disabled>
+                    🔍 Analyze Leaf
+                </button>
+
+                <div class="tips-list">
+                    <div class="tips-heading">Tips for best results</div>
+                    <div class="tip-row"><span class="tip-check">✓</span> Use a clear, well-lit photograph of a tomato leaf</div>
+                    <div class="tip-row"><span class="tip-check">✓</span> Ensure the leaf fills most of the camera frame</div>
+                    <div class="tip-row"><span class="tip-check">✓</span> Tomato leaves only — other plants will be rejected</div>
+                    <div class="tip-row"><span class="tip-check">✓</span> Charts, graphs, and screenshots will be rejected</div>
+                    <div class="tip-row"><span class="tip-check">✓</span> Avoid heavy shadows, blur, or extreme overexposure</div>
+                </div>
+
+                <div class="hint-box teal">
+                    <div class="hint-title">🧠 Grad-CAM — Explainable AI</div>
+                    <p class="hint-body">After diagnosis, a Grad-CAM heatmap highlights the exact leaf regions the AI focused on. Red and yellow areas had the most influence on the prediction, giving you transparent and trustworthy results.</p>
+                </div>
+            </div>
+
+            <!-- Results panel -->
+            <div id="resultsSection" style="display:none">
+
+                <div class="loading-panel" id="loadingCard" style="display:none">
+                    <div class="spinner"></div>
+                    <div class="loading-head">Analyzing your leaf image...</div>
+                    <div class="loading-sub">Running MobileNetV2 · HSV severity analysis · Grad-CAM generation</div>
+                </div>
+
+                <div class="panel" id="resultsCard" style="display:none">
+                    <div class="panel-title-row">
+                        <div class="panel-title">
+                            <div class="panel-ico-badge pib-teal">🩺</div>
+                            Diagnosis Report
+                        </div>
+                    </div>
+
+                    <div class="result-grid">
+                        <div class="result-card">
+                            <span class="result-lbl">Condition Detected</span>
+                            <span class="result-val teal" id="diseaseResult">—</span>
+                        </div>
+                        <div class="result-card">
+                            <span class="result-lbl">Confidence Score</span>
+                            <span class="result-val" id="confidenceResult">—</span>
+                        </div>
+                    </div>
+
+                    <div id="severitySection">
+                        <div class="result-grid" style="margin-top:10px">
+                            <div class="result-card">
+                                <span class="result-lbl">Infected Area</span>
+                                <span class="result-val" id="severityPctResult">—</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-lbl">Severity Level</span>
+                                <span class="result-val" id="severityLevelResult">—</span>
+                            </div>
+                        </div>
+                        <div class="sev-section">
+                            <div class="sev-top">
+                                <span>Infection severity</span>
+                                <span id="severityBarPct">0%</span>
+                            </div>
+                            <div class="sev-track">
+                                <div class="sev-fill" id="severityBarFill" style="width:0%"></div>
+                            </div>
+                            <div class="sev-scale">
+                                <span>0% — Mild</span><span>20%</span><span>50%</span><span>100% — Severe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:14px">
+                        <div class="xai-header">All Class Probabilities</div>
+                        <div id="allProbabilities"></div>
+                    </div>
+
+                    <div class="xai-section" id="gradcamSection" style="display:none">
+                        <div class="xai-header">
+                            🧠 Grad-CAM — AI Focus Region
+                            <span class="xai-badge">Explainable AI</span>
+                        </div>
+                        <div class="xai-frame">
+                            <img id="gradcamImage" alt="Grad-CAM heatmap">
+                            <div class="xai-caption">
+                                Red / yellow regions = highest AI attention &nbsp;·&nbsp;
+                                Blue / green regions = lower attention &nbsp;·&nbsp;
+                                These are the leaf areas that drove the prediction
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rec-box" id="recommendationCard">
+                        <div class="rec-hdr">
+                            <span class="rec-icon">💊</span>
+                            <div class="rec-title">Treatment Recommendation</div>
+                            <span class="p-badge" id="priorityBadge">—</span>
+                        </div>
+                        <p class="rec-body" id="treatmentText">—</p>
+                        <div class="rec-time">⏱ <span id="timeframeText">—</span></div>
+                    </div>
+
+                    <button class="btn-download" onclick="downloadReport()">
+                        📄 Download Diagnosis Report
+                    </button>
+                </div>
+
+                <div class="invalid-panel" id="invalidCard" style="display:none">
+                    <span class="err-ico">⚠️</span>
+                    <h3 class="err-title">Invalid Image — Not a Tomato Leaf</h3>
+                    <p class="err-body">This image does not appear to be a tomato leaf photograph. Plant Care Net performs multi-layer validation and has rejected this image. Please upload a clear, natural photograph of a tomato leaf.</p>
+                    <div class="inv-reasons" id="invalidReasons"></div>
+                    <ul class="inv-tips" id="invalidTips"></ul>
+                    <button onclick="resetUpload()" class="btn-retry">Upload a Tomato Leaf Image</button>
+                </div>
+
+                <div class="error-panel" id="errorCard" style="display:none">
+                    <span class="err-ico">⚠️</span>
+                    <p id="errorText">Something went wrong.</p>
+                    <button onclick="resetUpload()" class="btn-retry">Try Again</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

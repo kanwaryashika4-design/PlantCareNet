@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · Plant Care Net</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hdr">
+        <div class="hdr-left">
+            <div class="logo-wrap">
+                <span class="logo-icon">🌿</span>
+                <div class="logo-text">
+                    <span class="logo-name">Plant Care Net</span>
+                    <span class="logo-sub">AI Platform</span>
+                </div>
+            </div>
+            <div class="hdr-divider"></div>
+            <nav class="hdr-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/farmer" class="nav-link">Farmer Portal</a>
+                <a href="/researcher" class="nav-link">Researcher Portal</a>
+                <a href="/disease-library" class="nav-link">Disease Library</a>
+                <a href="/about" class="nav-link active">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-shell">
+        
+        <aside class="sidebar">
+            <span class="sb-label">Navigation</span>
+            <a href="/" class="sb-link">🏠 Home</a>
+            <a href="/farmer" class="sb-link">👨‍🌾 Farmer Portal</a>
+            <a href="/researcher" class="sb-link">🔬 Researcher Portal</a>
+            <a href="/disease-library" class="sb-link">🌿 Disease Library</a>
+            <a href="/about" class="sb-link active">ℹ️ About</a>
+        </aside>
+
+        <main class="main">
+            
+            <div class="page-top">
+                <div class="page-title-group">
+                    <span class="page-eyebrow">Platform Documentation</span>
+                    <h1 class="page-title">About Plant Care Net</h1>
+                    <p class="page-sub">Architecture, methodology, datasets, and performance benchmarks</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title-row">
+                    <div class="panel-title">
+                        <span class="panel-ico-badge pib-teal">💡</span>
+                        <span>Overview</span>
+                    </div>
+                </div>
+                <p style="font-size: 13px; color: var(--slate-600); line-height: 1.7;">
+                    Plant Care Net is a multimodal AI platform for tomato plant health assessment, combining deep learning image classification, computer vision-based severity quantification, and tabular machine learning for nutrient deficiency analysis — all accessible through a unified web interface designed for both field farmers and agricultural researchers.
+                </p>
+            </div>
+
+            <div id="models" class="page-title-group" style="margin-top: 12px;">
+                <span class="page-eyebrow">AI Engine Subsystems</span>
+                <h2 class="page-title" style="font-size: 18px;">Trained Neural Models</h2>
+            </div>
+
+            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px;">
+                
+                <div class="panel" style="border-top: 3px solid var(--teal-600); display: flex; flex-direction: column; gap: 14px;">
+                    <div>
+                        <span class="page-eyebrow" style="font-size: 9px;">Engine 1 — Disease Classification</span>
+                        <h3 class="metric-val teal" style="font-size: 20px; margin-top: 2px;">MobileNetV2 CNN</h3>
+                    </div>
+
+                    <div class="result-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 0;">
+                        <div class="result-card"><span class="result-lbl">Accuracy</span><strong class="result-val teal">93.88%</strong></div>
+                        <div class="result-card"><span class="result-lbl">Precision</span><strong class="result-val">93.71%</strong></div>
+                        <div class="result-card"><span class="result-lbl">Recall</span><strong class="result-val">93.65%</strong></div>
+                        <div class="result-card"><span class="result-lbl">F1-Score</span><strong class="result-val">93.68%</strong></div>
+                    </div>
+
+                    <table class="field-input" style="width:100%; font-size:12px; border-collapse: collapse; text-align: left; background: var(--slate-50);">
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Architecture</td><td style="padding: 6px; color:var(--navy);">MobileNetV2 (ImageNet)</td></tr>
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Input shape</td><td style="padding: 6px; color:var(--navy);">224 × 224 × 3 (RGB)</td></tr>
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Output classes</td><td style="padding: 6px; color:var(--navy);">4 classes configured</td></tr>
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Dataset size</td><td style="padding: 6px; color:var(--navy);">11,445 items</td></tr>
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Loss Engine</td><td style="padding: 6px; color:var(--navy);">Cross-Entropy</td></tr>
+                        <tr><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Augmentations</td><td style="padding: 6px; color:var(--navy);">Rotation, zoom, flip</td></tr>
+                    </table>
+                </div>
+
+                <div class="panel" style="border-top: 3px solid var(--violet-600); display: flex; flex-direction: column; gap: 14px;">
+                    <div>
+                        <span class="page-eyebrow" style="font-size: 9px; color: var(--violet-700);">Engine 2 — Nutrient Deficiency</span>
+                        <h3 class="metric-val violet" style="font-size: 20px; margin-top: 2px;">Random Forest</h3>
+                    </div>
+
+                    <div class="result-grid" style="grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 0;">
+                        <div class="result-card"><span class="result-lbl">Accuracy</span><strong class="result-val violet">96.36%</strong></div>
+                        <div class="result-card"><span class="result-lbl">Precision</span><strong class="result-val">96.81%</strong></div>
+                        <div class="result-card"><span class="result-lbl">Recall</span><strong class="result-val">95.91%</strong></div>
+                        <div class="result-card"><span class="result-lbl">F1-Score</span><strong class="result-val">96.33%</strong></div>
+                    </div>
+
+                    <table class="field-input" style="width:100%; font-size:12px; border-collapse: collapse; text-align: left; background: var(--slate-50);">
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Algorithm</td><td style="padding: 6px; color:var(--navy);">Random Forest Classifier</td></tr>
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Estimators</td><td style="padding: 6px; color:var(--navy);">100 decision trees</td></tr>
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Max Depth</td><td style="padding: 6px; color:var(--navy);">8 parameters maximum</td></tr>
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Input features</td><td style="padding: 6px; color:var(--navy);">9 core soil-env factors</td></tr>
+                        <tr style="border-bottom: 1px solid var(--slate-200);"><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Output classes</td><td style="padding: 6px; color:var(--navy);">4 matrix profiles</td></tr>
+                        <tr><td style="padding: 6px; font-weight:600; color:var(--slate-500);">Train/Test Split</td><td style="padding: 6px; color:var(--navy);">80/20 stratified profile</td></tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <div id="methodology" class="panel">
+                <div class="panel-title-row">
+                    <div class="panel-title">
+                        <span class="panel-ico-badge pib-violet">⚙️</span>
+                        <span>Severity Quantification Pipeline Methodology</span>
+                    </div>
+                </div>
+                
+                <p style="font-size: 13px; color: var(--slate-500); margin-bottom: 18px;">
+                    The severity scoring engine operates completely without a second ML model. Instead, it uses classical computer vision algorithms directly running on CPU:
+                </p>
+
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    
+                    <div class="result-card" style="display: flex; gap: 14px; align-items: flex-start;">
+                        <span class="chip chip-sky" style="font-size: 12px; padding: 4px 10px;">1</span>
+                        <div>
+                            <strong style="color: var(--navy); font-size:13px; display:block; margin-bottom:2px;">RGB → HSV Color Conversion</strong>
+                            <p style="font-size:12px; color: var(--slate-600);">Image matrix is shifted to HSV. Splitting color values (hue) from lighting dynamics stabilizes structural threshold operations perfectly compared to native RGB arrays.</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card" style="display: flex; gap: 14px; align-items: flex-start;">
+                        <span class="chip chip-sky" style="font-size: 12px; padding: 4px 10px;">2</span>
+                        <div>
+                            <strong style="color: var(--navy); font-size:13px; display:block; margin-bottom:2px;">Dual Space Masking</strong>
+                            <p style="font-size:12px; color: var(--slate-600);">Calculates two independent matrix indices: full leaf parameter contour and a healthy green space layer matrix (Hue threshold 35–85 on standard limits).</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card" style="display: flex; gap: 14px; align-items: flex-start;">
+                        <span class="chip chip-sky" style="font-size: 12px; padding: 4px 10px;">3</span>
+                        <div>
+                            <strong style="color: var(--navy); font-size:13px; display:block; margin-bottom:2px;">Pixel Area Analysis</strong>
+                            <p style="font-size:12px; color: var(--slate-600);">Evaluates leaf tissue degradation directly: infected area matrix equals total leaf space count minus the isolated healthy components. Runs instantly on CPU vectors.</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card" style="display: flex; gap: 14px; align-items: flex-start;">
+                        <span class="chip chip-sky" style="font-size: 12px; padding: 4px 10px;">4</span>
+                        <div>
+                            <strong style="color: var(--navy); font-size:13px; display:block; margin-bottom:2px;">Threshold Bucket Allocation</strong>
+                            <p style="font-size:12px; color: var(--slate-600);">Bins result metrics across three scales: 0–20% (Mild profile), 21–50% (Moderate profiling), and 51–100% (Severe infection profiles).</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">🌿 Plant Care Net</div>
+                <p class="footer-desc">Multimodal Plant Disease Diagnosis, Infection Severity Quantification &amp; Deficiency Analysis Platform</p>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <div class="footer-col-head">Core Framework Stack</div>
+                    <span style="font-size: 12px; color: rgba(255,255,255,0.4);">TensorFlow · Keras · Scikit-Learn · OpenCV · Flask Application server</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Built with TensorFlow, OpenCV, Flask &amp; Scikit-learn</span>
+            <span>© 2026 Plant Care Net</span>
+        </div>
+    </footer>
+
+</body>
+</html>
