@@ -6,8 +6,8 @@ venv/
 .env
 
 # Models (too large for GitHub, host on Drive instead)
-backend/models/*.h5
-backend/models/*.pkl
+#backend/models/*.h5
+#backend/models/*.pkl
 
 # Data
 *.zip
